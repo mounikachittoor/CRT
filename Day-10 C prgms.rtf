@@ -1,0 +1,450 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang16393{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa200\sl276\slmult1\lang9\b\f0\fs36 Q. Check if it is palindrome or not\par
+Sol:\par
+\b0\fs28 #include <stdio.h>\par
+void main()\par
+\{\par
+   int a,rev=0,r,t;\par
+   scanf("%d",&a);\par
+   t=a;\par
+   while (a!=0)\par
+   \{\par
+    r=a%10;\par
+    rev=rev*10+r;\par
+    a=a/10;\par
+   \}\par
+   if(rev==t)\par
+   printf("palindrome");\par
+   else\par
+   printf("not a palindrome");\par
+\}\par
+   \b # 1221\par
+     palindrome\par
+\par
+\fs36 Q. No. of palindromes from 1 to n\par
+Sol:\par
+\b0\fs28 #include <stdio.h>\par
+void main()\par
+\{\par
+   int a,s,r,t,range;\par
+   scanf("%d",&range);\par
+   for(a=0;a<=range;a++)\par
+   \{\par
+    s=0;\par
+   t=a;\par
+   while (t!=0)\par
+   \{\par
+    r=t%10;\par
+    s=s*10+r;\par
+    t=t/10;\par
+   \}\par
+   if(s==a)\par
+   printf("%d ",a);\par
+   \}\par
+\}\par
+\b #100                                                                                                                             \par
+0 1 2 3 4 5 6 7 8 9 11 22 33 44 55 66 77 88 99\par
+#1000                                                                                                                            \par
+0 1 2 3 4 5 6 7 8 9 11 22 33 44 55 66 77 88 99 101 111 121 131 141 151 161 171 181 191 202 212 222 232 242 252 262 272 282 292 303 313 323 333 343 353 363 373 383 393 404 414 424 434 444 454 464 474 484 494 505 515 525 535 545 555 565 575 585 595 606 616 626 636 646 656 666 676 686 696 707 717 727 737 747 757 767 777 787 797 808 818 828 838 848 858 868 878 888 898 909 919 929 939 949 959 969 979 989 999     \par
+\par
+\fs36 Q. Printing nth palindromes with index\par
+Sol:\par
+\b0\fs28 #include <stdio.h>\par
+void main()\par
+\{\par
+   int a,s,r,t,k,c=0;\par
+   scanf("%d",&k);\par
+   for(a=0;c<k;a++)\par
+   \{\par
+    s=0;\par
+   t=a;\par
+   while (t!=0)\par
+   \{\par
+    r=t%10;\par
+    s=s*10+r;\par
+    t=t/10;\par
+   \}\par
+   if(s==a)\par
+   \{\par
+       c++;\par
+   printf("%d=%d ",c,a);\par
+   \}\par
+   \}\par
+\}\par
+\b #15                                                                                                                            \par
+1=0 2=1 3=2 4=3 5=4 6=5 7=6 8=7 9=8 10=9 11=11 12=22 13=33 14=44 15=55\par
+\fs36\par
+Q. To print the kth palindrome\par
+Sol:\par
+\b0\fs28 #include <stdio.h>\par
+void main()\par
+\{\par
+   int a,s,r,t,k,c=0;\par
+   scanf("%d",&k);\par
+   for(a=0;c<k;a++)\par
+   \{\par
+    s=0;\par
+   t=a;\par
+   while (t!=0)\par
+   \{\par
+    r=t%10;\par
+    s=s*10+r;\par
+    t=t/10;\par
+   \}\par
+   if(s==a)\par
+   \{\par
+       c++;\par
+   \}\par
+   \}\par
+   printf("%d=%d ",c,a-1);\par
+\}\par
+\b #18                                                                   55                                                                                                                                                                                     \par
+18=88                                                             55=454                                                         \fs36\par
+\fs28\par
+\par
+\fs36 Q. Print the amstrong \par
+Sol: -----> sum of the powers of the digits in a no. = no.\par
+\b0\fs28 ---->  sum of cubes\par
+#include <stdio.h>\par
+void main()\par
+\{\par
+   int a,s=0,r,t;\par
+   scanf("%d",&a);\par
+   t=a;\par
+   while (a!=0)\par
+   \{\par
+    r=a%10;\par
+    s=s+r*r*r;\par
+    a=a/10;\par
+   \}\par
+   if(s==t)\par
+   printf("amstrong");\par
+   else\par
+   printf("not an amstrong");\par
+\}\par
+\b    # 153\par
+    amstrong\par
+-----> sum of powers\par
+i.e., 8208---4 digits\par
+---- 8^4+0^4+2^4+8^4=8208---amstrong\par
+-----1634 is an amstrong no.\par
+\b0 #include <stdio.h>\par
+void main()\par
+\{\par
+   int a,s=0,r,t,c=0;\par
+   scanf("%d",&a);\par
+   t=a;\par
+   while(a!=0)\par
+   \{\par
+       c++;\par
+       a=a/10;\par
+   \}\par
+   t=a;\par
+   while (a!=0)\par
+   \{\par
+    r=a%10;\par
+    s=s+pow(r,c);\par
+    a=a/10;\par
+   \}\par
+   if(s==t)\par
+   printf("amstrong");\par
+   else\par
+   printf("not an amstrong");\par
+\}\par
+\b # 1634\par
+amstrong\par
+\par
+\fs36 Q. How  many number of amstrongs r there in n no.s\b0\fs28\par
+#include <stdio.h>\par
+#include<math.h>\par
+void main()\par
+\{\par
+   int n,s,r,t,c,range;\par
+   scanf("%d",&range);\par
+   for(n=1;n<=range;n++)\par
+   \{\par
+   s=0;\par
+   c=0;\par
+   t=n;\par
+   while(t!=0)\par
+   \{\par
+       c++;\par
+       t=t/10;\par
+   \}\par
+   t=n;\par
+   while (t!=0)\par
+   \{\par
+    r=t%10;\par
+    s=s+pow(r,c);     \b #in some cmpilers we will not get 153..use ceil(power(r,c))\b0\par
+    t=t/10;\par
+   \}\par
+   if(s==n)\par
+   printf("%d ",n);\par
+   \}\par
+\}\par
+\b #10000\par
+1 2 3 4 5 6 7 8 9 153 370 371 407 1634 8208 9474\par
+\par
+\fs36 Q. To find prime number\par
+Sol:\par
+\b0\fs28 #include <stdio.h>\par
+void main()\par
+\{\par
+  int n,c=0,i;\par
+  scanf("%d",&n);\par
+  for(i=1;i<=n;i++)\par
+  \{\par
+      if(n%i==0)\par
+      c++;\par
+  \}\par
+  if(c==2)\par
+  printf("prime no.");\par
+  else\par
+  printf("not a prime no.");\par
+\}\par
+ \b #11                                                                                                                            \par
+prime no.\par
+\par
+\fs36 Q. Prime no. range\par
+Sol:\par
+\b0\fs28 #include <stdio.h>\par
+void main()\par
+\{\par
+  int n,c,i,range;\par
+  scanf("%d",&range);\par
+  for(n=1;n<=range;n++)\par
+  \{\par
+      c=0;\par
+  for(i=1;i<=n;i++)\par
+  \{\par
+      if(n%i==0)\par
+      c++;\par
+  \}\par
+  if(c==2)\par
+  printf("%d ",n);\par
+  \}\par
+\}\par
+\b  #100                                                                                                                           \par
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97                  \par
+---->SUM OF N PRIMES\par
+\b0 #include <stdio.h>\par
+void main()\par
+\{\par
+  int n,c,i,range,s=0;\par
+  scanf("%d",&range);\par
+  for(n=1;n<=range;n++)\par
+  \{\par
+      c=0;\par
+  for(i=1;i<=n;i++)\par
+  \{\par
+      if(n%i==0)\par
+      c++;\par
+  \}\par
+  if(c==2)\par
+  \{\par
+      s=s+n;\par
+  printf("%d ",n);\par
+  \}\par
+  \}\par
+  printf("\\n sum=%d",s);\par
+\}\par
+  \b # 100                                                                                                                           \par
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97                                                        \par
+ sum=1060  \par
+-----> To print primes from n to m \par
+from 500 to 1000\par
+\b0 #include <stdio.h>\par
+void main()\par
+\{\par
+  int n,c,i,s=0;\par
+  for(n=500;n<=1000;n++)\par
+  \{\par
+      c=0;\par
+  for(i=1;i<=n;i++)\par
+  \{\par
+      if(n%i==0)\par
+      c++;\par
+  \}\par
+  if(c==2)\par
+  \{\par
+      s=s+n;\par
+  printf("%d ",n);\par
+  \}\par
+  \}\par
+  printf("\\n sum=%d",s);\par
+\}\par
+  \b # 503 509 521 523 541 547 557 563 569 571 577 587 593 599 601 607 613 617 619 631 641 643 647 653 659 661 673 677 683 691 701 709 719 727 733 739 743 751 757 761 769 773 787 797 809 811 821 823 827 829 839 853 857 859 863 877 881 883 887 907 911 919 929 937 941 947 953 967 971 977 983 991 997                                                                                       \par
+ sum=54591   \par
+\par
+\fs36 Q. Fibonacci No.\par
+Sol: \b0\fs28\par
+#include <stdio.h>\par
+void main()\par
+\{\par
+  int n,f1=0,f2=1,f3,i;\par
+  scanf("%d",&n);\par
+  if(n==1)\par
+  printf("%d ",f1);\par
+  else\par
+  \{\par
+  printf("%d %d ",f1,f2);\par
+  for(i=3;i<=n;i++)\par
+  \{\par
+  f3=f1+f2;\par
+  printf("%d ",f3);\par
+  f1=f2;\par
+  f2=f3;\par
+ \}\par
+ \}\par
+\}\par
+\b   # 10                                                                                                                            \par
+0 1 1 2 3 5 8 13 21 34 \par
+----> To print nth fibonacci no.\par
+\b0 #include <stdio.h>\par
+void main()\par
+\{\par
+  int n,f1=0,f2=1,f3,i;\par
+  scanf("%d",&n);\par
+  if(n==1)\par
+  printf("%d ",f1);\par
+  else \par
+  \{\par
+  for(i=3;i<=n;i++)\par
+  \{\par
+  f3=f1+f2;\par
+  f1=f2;\par
+  f2=f3;\par
+ \}\par
+ printf("%d ",f2);\par
+ \}\par
+\}\par
+  \b #15                                                                                                                            \par
+377\par
+-----> No. of digits in the FB no.\par
+\b0 #include <stdio.h>\par
+void main()\par
+\{\par
+  int n,f1=0,f2=1,f3,i,c;\par
+  scanf("%d",&n);\par
+  if(n==1)\par
+  c=printf("%d",f1);\par
+  else \par
+  \{\par
+  for(i=3;i<=n;i++)\par
+  \{\par
+  f3=f1+f2;\par
+  f1=f2;\par
+  f2=f3;\par
+ \}\par
+ c=printf("%d",f2);\par
+ \}\par
+ printf("\\nno.of digits = %d",c);\par
+\}\par
+  \b # 25                                                                                                                            \par
+46368                                                                                                                         \par
+no.of digits = 5 \par
+\par
+\fs36 Q. To check if product of digits of a no. at even nd odd places is equal\par
+Sol:\par
+\b0\fs28 #include <stdio.h>\par
+void main()\par
+\{\par
+  int n,r,c=0,peven=1,podd=1;\par
+  scanf("%d",&n);\par
+  while(n!=0)\par
+  \{\par
+      r=n%10;\par
+      c++;\par
+      if(c%2==0)\par
+        peven=peven*r;\par
+      else\par
+        podd=podd*r;\par
+       n=n/10;\par
+  \}\par
+  if(peven==podd)\par
+    printf("equal");\par
+  else\par
+    printf("not equal");\par
+\}\par
+  \b # 8214                                                                                                                          \par
+equal  \par
+\par
+\fs36 Q. Find the nth no. made of even digits\par
+Sol:\par
+\b0\fs28 #include <stdio.h>\par
+void main()\par
+\{\par
+  int n,r,t,k,c=0;\par
+  scanf("%d",&k);\par
+  for(n=0;c<k;n++)\par
+  \{\par
+    t=n;\par
+    while(t!=0)\par
+  \{\par
+      r=t%10;\par
+     if(r%2!=0)\par
+        break;\par
+    else\par
+       t=t/10;\par
+  \}\par
+  if(t==0)\par
+  \{\par
+      c++;\par
+    printf("%d ",n);\par
+  \}\par
+  \}\par
+\}\par
+   \b # 12                                                                                                                            \par
+0 2 4 6 8 20 22 24 26 28 40 42                                                                                                \par
+ -----> Find the nth no. made of odd digits\par
+\b0 #include <stdio.h>\par
+void main()\par
+\{\par
+  int n,r,t,k,c=0;\par
+  scanf("%d",&k);\par
+  for(n=1;c<k;n++)\par
+  \{\par
+    t=n;\par
+    while(t!=0)\par
+  \{\par
+      r=t%10;\par
+     if(r%2!=1)\par
+        break;\par
+    else\par
+       t=t/10;\par
+  \}\par
+  if(t==0)\par
+  \{\par
+      c++;\par
+    printf("%d ",n);\par
+  \}\par
+  \}\par
+\}\par
+ \b # 12                                                                                                                            \par
+1 3 5 7 9 11 13 15 17 19 31 33   \par
+\par
+                                      \par
+                                                                     \b0\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\fs22\par
+}
+ 
