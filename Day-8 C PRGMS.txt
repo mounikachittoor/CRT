@@ -1,0 +1,554 @@
+1.
+#include <stdio.h>
+
+
+void main()
+
+{
+   
+ float a=5.6;
+    
+printf("%f",a);
+
+   
+ 
+}
+
+
+2.FOR MAX VALUE OF INT
+#include <stdio.h>
+
+#include<limits.h>
+
+
+void main()
+
+{
+    
+int a;
+    
+a=INT_MAX;
+    
+printf("%d",a);
+
+    
+
+}
+
+
+3.printing alphabets using acsii values
+   #include <stdio.h>
+
+
+void main()
+
+{
+    
+int i;
+    
+for(i=65;i<=90;i++)
+       [for i=0 to 200 we get all values]
+ printf("%c",i);
+
+           [if we write %c=%d then we get alphabets=ascii values]
+ 
+}
+
+
+4. DIFFERENT ESCAPE SEQUENCES
+    
+\b  ---  backspace
+\f  ---  form feed[in abcd\fxyz it prints abcd
+                                              xyz]
+\n  ---  new line
+\r  ---  carriage return
+\t  ---  tab
+\v  ---  vertical tab
+\\  ---  backslash
+\'  ---  single quote
+\"  ---  double quote
+\a  ---  bell
+
+5. FORMAT SPECIFIERS
+ --- To change from one format to other i.e., from decimal to octal to binary to hexa-decimal etc..
+   %p -- pointer kind of variables
+   %lf -- double float
+   %ld -- long int
+   %x  -- to get hexa-decimal of a number
+   %o  -- to get octal
+
+6. If we give a=035 it takes it as octal ..so we get the decimal number i.e., 29
+      i.e., any number prefixed with 0 it is taken as octal
+   Any no. prefixed with "0x" it is taken as Hexa-decimal
+
+
+7. 
+#include <stdio.h>
+
+
+void main()
+
+{
+  
+ int a;
+  
+a=printf("hello");
+      # a takes the no. of char in that word.......o/p is hello5
+printf("%d",a);
+
+         # if we give hello\n we get o/p as hello  
+
+   }
+                                                       6   [\n is a single word]
+
+8.
+   
+#include <stdio.h>
+
+
+void main()
+
+{
+   
+int a,b,c;
+   
+ c=scanf("%d%d",&a,&b);
+      # c takes the no. of variables irrespective of the values in a nd b
+printf("%d",c);
+
+              o/p is 35
+ 
+}
+                                  67
+                                    2 [since we have 2 variables a nd b]
+
+9.
+  #include <stdio.h>
+
+
+void main()
+
+{
+   
+ 
+printf("%d",10+'A');      # it takes the ascii value of A ..o/p is 75
+
+    
+}                         # without'' o/p is error
+
+
+10.
+  
+#include <stdio.h>
+
+
+void main()
+
+{
+   
+int a;
+   
+a=12.7%5.2;          # percentile doesnot works for decimal.o/p is error
+ printf("%f",a);
+
+   # if we use a=fmod(12.7,5.2) 
+  
+}
+       [[ if we use a=fmod(12.7,5.2) ]]
+        
+#include <stdio.h>
+
+          #include<math.h>
+
+
+           void main()
+          
+{
+  
+            float a;
+   
+              a=fmod(12.7,5.2);
+       # o/p is 2.300000
+               printf("%f",a);
+
+   
+          
+}
+
+
+
+11.
+  #include <stdio.h>
+
+
+void main()
+
+{
+   
+int a=5,b;
+                   # o/p is 65 ..post increment..1st it takes given value nd then it increments
+ b=a++;
+
+ printf("%d%d",a,b);
+
+         # if we give ++a...o/p is 66
+ 
+}
+
+
+   
+     #include <stdio.h>
+
+
+    void main()
+    
+{
+                          # o/p is 54
+        int a=5;
+  
+ 
+         printf("%d",a--);
+        
+            printf("%d",a);
+
+    
+     
+}
+
+
+
+ARITHMETIC OPERATORS::
+
+12. 
+   
+#include <stdio.h>
+  
+
+void main()
+ 
+{
+   
+  int a=5,b=0,c;
+       # o/p is 0
+   c=b&&a;
+   
+   printf("%d",c);
+ 
+ 
+}
+
+
+
+13.
+  #include <stdio.h>
+
+
+  void main()
+
+{
+   
+int a=5,b=8,c,d=0;
+       # when or nd and is in one line the first preference is given to and
+ c=b||a&&d;
+    
+printf("%d%d",a,c);
+       # o/p is 51
+}
+
+
+
+  && --- AND Gate
+  || --- OR Gate
+  !  --- NOT Gate
+
+14. 
+#include <stdio.h>
+
+
+void main()
+
+{
+   
+int a=509,c;
+           # o/p is 0
+ c=!a;
+    
+printf("%d",c);
+
+ 
+}
+
+RELATIONAL OPERATORS::
+
+15. 
+#include <stdio.h>
+
+
+void main()
+
+{
+   
+int a=5,b=6,c;
+   
+if(a=b)
+   
+ printf("yes");
+
+ else
+ 
+printf("no");
+
+printf("%d",a);
+           # o/p is yes6.....if(a==b)..o/p is no5 
+
+ }
+
+ 
+  #include <stdio.h>
+
+
+void main()
+
+{
+   
+int a=5,b=0,c;
+   
+if(a=b)
+    
+printf("yes");
+
+ else
+ 
+printf("no");
+
+ printf("%d",a);          # o/p is no0
+ 
+
+ }
+
+
+ BITWISE OPERATORS::
+
+ &(AND)  |(OR)  ^(XOR..SAME=0)  <<(LEFT SHIFT)  >>(RIGHT SHIFT)  ~ (tilt)
+ 
+<< -- a * 2^s
+>> -- a / 2^s
+
+   #include <stdio.h>
+
+
+void main()
+
+{
+   
+int a=5,c;
+            # o/p is -6 
+c = ~a;
+
+printf("%d",c);
+       # o/p is 51 for a=-52
+}
+
+
+
+ASSIGNMENT OPERATORS::
+
++=  -=  *=  /=  %=  &=  ^=  <<=  >>=  |=  =
+
+#include <stdio.h>
+
+
+void main()
+
+{
+   
+int a=5;
+      # o/p is 9
+ a+=4;
+
+printf("%d",a);
+ 
+
+}
+
+
+MISCELLANEOUS OPERATORS::
+
+&  *  ?:  sizeof()
+
+#include <stdio.h>
+
+
+void main()
+
+{
+   
+int a;
+
+printf("%d",sizeof(a));
+      # to know how many bytes r alloted....o/p is 4 
+
+}
+
+
+
+#include <stdio.h>
+
+
+void main()
+
+{
+   
+int a=5,b;
+                # o/p is 54
+ b=sizeof(a);
+
+printf("%d%d",a,b);   # whatever the changes is done in sizeof(incr,decr).the o/p is same 54
+ 
+
+}
+
+#include <stdio.h>
+
+
+void main()
+
+{
+   
+int a=6,b=5,c;
+   
+c=a>b?a:b;
+
+printf("%d",c);
+        # largest of 2 no.s....o/p is 6
+ 
+}
+
+
+
+#include <stdio.h>
+
+
+void main()
+
+{
+   
+int a=6,b=5,c;
+   
+c=a<b?a:b;
+
+printf("%d",c);
+    # smallest of no.s..o/p is 5
+ 
+}
+
+
+#include <stdio.h>
+
+
+void main()
+
+{
+   
+int a=0,b=5,c;
+  
+ c=7?1:b;         # non-zero?a:b....o/p is 1st no.
+printf("%d",c);
+   # zero?a:b....o/p is 2nd no. 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
