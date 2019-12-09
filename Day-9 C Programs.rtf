@@ -1,0 +1,380 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang16393{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset2 Symbol;}}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa200\sl276\slmult1\lang9\b\f0\fs28 OPERATION PRECEDENCE:\par
+1.\par
+\b0 #include <stdio.h>\par
+void main()\par
+\{\par
+    int c;                                             \par
+    c = 20/200*200;                        \par
+    printf("%d",c);                              \b #   o/p is 0\par
+\b0\}\par
+\pard\sa200\sl276\slmult1               \b # if 20.0/200*200...o/p is 20\b0\par
+\pard\sa200\sl276\slmult1              \b # we can also write (float)20/200*200 to get 20 as o/p....this is called \fs32 Explicit conversion\par
+                       ----- we r giving the data type \par
+2.\par
+\b0\fs28 #include <stdio.h>\par
+void main()\par
+\{\par
+    double x=1.2;\par
+    int sum;\par
+   sum=(int)x+1;                            \b # o/p is sum=2\b0\par
+    printf("sum=%d",sum);\par
+\}\b\par
+\fs32 3\fs28 .\par
+\b0 #include <stdio.h>\par
+void main()\par
+\{\par
+    int x = 10;\par
+    char y='a';\par
+    x=x+y;\par
+    float z=x+1.0;\par
+    printf("x=%d,z=%f",x,z);            \b #  o/p is x=107 ,  z=108.000000\b0\par
+    \}\par
+        \b # \fs32 Implicit conversion\b0\fs28\par
+             ------- based on ranking it will take the type..we r not giving specifically\par
+\b\fs36\par
+CONTROL STRUCTURES:\par
+1.\fs32  Selection Statements(Desicion Making)\par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1  simple if statement\fs36\par
+\pard\li360\sa200\sl276\slmult1\b0\fs28 #include <stdio.h>\par
+void main()\par
+\{\par
+    int n;\par
+    scanf("%d",&n);\par
+    if (n>=0)\par
+    printf("given no. is +ve");         \par
+\}                                         \par
+\b          # 2\par
+\pard\li360\sa200\sl276\slmult1             given no. is +ve\par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li1080\sa200\sl276\slmult1\fs36 if else statement\b0\fs28\par
+\pard\li360\sa200\sl276\slmult1      #include <stdio.h>\par
+\pard\li720\sa200\sl276\slmult1 void main()\par
+\{\par
+    int n;\par
+    scanf("%d",&n);\par
+    if (n%2==0)\par
+    printf("given no. is even");\par
+    else\par
+    printf("odd no.");\par
+\}\par
+    \b # 7\par
+       odd no.\fs36\par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li1440\sa200\sl276\slmult1 if else ladder\fs28\par
+\pard\li1080\sa200\sl276\slmult1\b0 #include <stdio.h>\par
+void main()\par
+\{\par
+    char n;\par
+    scanf("%c",&n);\par
+    if (n>=48 &&n<=57)\par
+    printf("given no. is a digit");\par
+    else if(n>=97 && n<=122)\par
+    printf("lower case ");\par
+    else if(n>=65&&n<=91)\par
+    printf("upper case");\par
+    else\par
+    printf("not valid");\par
+\}\par
+  \b # A\par
+    upper case\par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li1800\sa200\sl276\slmult1\fs36 switch case\fs28\par
+\pard\li1080\sa200\sl276\slmult1\b0      #include <stdio.h>\par
+\pard\li1440\sa200\sl276\slmult1 void main()\par
+\{\par
+    int n;\par
+    printf("enter a no.");\par
+    scanf("%d",&n);\par
+    switch(n)\par
+    \{\par
+    case 1:printf("sunday");break;\par
+    case 2:printf("monday");break;\par
+    case 3:printf("tuesday");break;\par
+    case 4:printf("wednesday");break;\par
+    case 5:printf("thursday");break;\par
+    case 6:printf("friday");break;\par
+    case 7:printf("saturday");break;\par
+    default:\par
+    printf("invalid");\par
+    \}\par
+\}\par
+ \b # enter a no.6\par
+    friday\par
+# if there is no break..it will print until the next break comes\par
+\pard\sa200\sl276\slmult1   \b0 #include <stdio.h>\par
+   void main()\par
+\{\par
+    int a,b,ch;\par
+    printf("enter the no.");\par
+    scanf("%d%d",&a,&b);\par
+    scanf("%d",&ch);\par
+    switch(ch)\par
+    \{\par
+    case 1:printf("%d",a+b);break;\par
+    case 2:printf("%d",a-b);break;\par
+    case 3:printf("%d",a*b);break;\par
+    case 4:printf("%d",a/b);break;\par
+    case 5:printf("%d",a%b);break;\par
+    default: printf("invalid");\par
+    \}\par
+\}\par
+  \b # enter the no.4\par
+2\par
+1\par
+6\par
+  \b0    \par
+#include <stdio.h>\par
+void main()\par
+\{\par
+    int a,b;\par
+    char ch;\par
+    printf("enter the no.");\par
+    scanf("%d%d",&a,&b);\par
+    scanf(" %c",&ch);         \b # since we gave space before %c we typed * in nxt line..or else it takes the enter as ch nd the o/p is printed as invalid\b0\par
+    switch(ch)\par
+    \{\par
+    case '+':printf("%d",a+b);break;\par
+    case '-':printf("%d",a-b);break;\par
+    case '*':printf("%d",a*b);break;\par
+    case '/':printf("%d",a/b);break;\par
+    case '%':printf("%d",a%b);break;\par
+    default:\par
+    printf("invalid");\par
+    \}\par
+\}\par
+  \b # enter the no.6\par
+    4\b0\par
+  \b  *\par
+   24\par
+\fs36\par
+2. Iterative Statements(loop cntrl structures)\par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 While loop\b0\fs28\par
+\pard\li360\sa200\sl276\slmult1  ------ until the condition becomes false it stops executing\par
+ ------ first it checks the condition nd enters the loop\par
+#include <stdio.h>\par
+void main()\par
+\{\par
+  int i=1;\par
+  while(i<=10)\par
+  \{\par
+  printf("%d ",i);\par
+  i++;\par
+  \}\par
+\}\par
+  \b # 1 2 3 4 5 6 7 8 9 10\par
+--> printing odd no.s from 1 to n\par
+\b0 #include <stdio.h>\par
+void main()\par
+\{\par
+  int i=1,n;\par
+scanf("%d",&n);\par
+  while(i<=n)\par
+  \{\par
+  printf("%d ",i);\par
+  i+=2;\par
+  \}\par
+\}\par
+\b # 15\par
+1 3 5 7 9 11 13 15\par
+---> to print even no.s put i=0\par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\fs36 Do while\b0\fs28\par
+\pard\li360\sa200\sl276\slmult1 ------ first it enters the loop then checks the condition\par
+------ atleast once the loop is executed in do while\par
+#include <stdio.h>\par
+void main()\par
+\{\par
+  int i;\par
+  i=1;\par
+  do\par
+  \{\par
+  printf("%d ",i);\par
+  i++;\par
+  \}while(i<=10);\par
+\}\par
+\b # 1 2 3 4 5 6 7 8 9 10\par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\fs36 for loop\b0\fs28\par
+\pard\li360\sa200\sl276\slmult1 ---- open ended loop\par
+---- enters a loop if the condition is true\par
+---- executes a set of statements until a condition is satisfied \par
+[[ if < is there ++ should use,,,, > is there --should be used\par
+#include <stdio.h>\par
+void main()\par
+\{\par
+  int i;\par
+  for(i=1;i<=5;i++)\par
+  printf("%d ",i);\par
+\}\par
+\b # 1 2 3 4 5\par
+\b0 ----> if we keep ; at the end of for() ..the o/p is 6\par
+#include <stdio.h>\par
+void main()\par
+\{\par
+    int i;\par
+  for(i=1;i%5;i++)\par
+  printf("%d ",i);\par
+\} \par
+\b # 1 2 3 4    \b0 -----> until non zero no. it will print\par
+\par
+\b\fs32 Q. Write a prgrm to print the digits of a no. 5467..the o/p is 7  6  4  5\par
+Sol:\par
+\b0\fs28 #include <stdio.h>\par
+void main()\par
+\{\par
+    int n,r;\par
+    printf("enter the no.");\par
+    scanf("%d",&n);\par
+    while(n!=0)\par
+    \{\par
+    r=n%10;\par
+    printf("%d ",r);\par
+    n=n/10;\par
+    \}\par
+\}\par
+\b # enter the no.5467\par
+7 6 4 5\par
+\fs32\par
+Q. Prgrm to find sum of the digits of the no.\par
+Sol:\par
+\b0\fs28 #include <stdio.h>\par
+void main()\par
+\{\par
+    int n,r,sum=0;\par
+    printf("enter the no.");\par
+    scanf("%d",&n);\par
+    while(n!=0)\par
+    \{\par
+    r=n%10;\par
+    sum+=r;\par
+    n=n/10;\par
+    \}\par
+    printf("%d ",sum);\par
+\}\par
+\b #enter the no.1234\par
+10\par
+\par
+\fs32 Q. Print the reverse of a no.\par
+Sol:\par
+\b0\fs28 #include <stdio.h>\par
+void main()\par
+\{\par
+    int n,r,s=0;\par
+    printf("enter the no.");\par
+    scanf("%d",&n);\par
+    while(n!=0)\par
+    \{\par
+    r=n%10;\par
+    s=s*10+r;\par
+    n=n/10;\par
+    \}\par
+    printf("%d ",s);\par
+\}\par
+\b #enter the no.1234\par
+4321\par
+\par
+\fs32 Q. Sum of the first nd last digit of a no.\par
+Sol:\par
+\b0\fs28 #include <stdio.h>\par
+void main()\par
+\{\par
+    int n,r,sum,i;\par
+    printf("enter the no.");\par
+    scanf("%d",&n);\par
+    i=n%10;\par
+    while(n!=0)\par
+    \{\par
+    r=n%10;\par
+    n=n/10;\par
+    \}\par
+    sum=i+r;\par
+    printf("%d ",sum);\par
+\}\par
+  \b # enter the no.1234\par
+5\par
+\par
+\fs32 Q. Sum of only odd digits in a no.\par
+Sol:\par
+\b0\fs28 #include <stdio.h>\par
+void main()\par
+\{\par
+    int n,r,sum=0;\par
+    printf("enter the no.");\par
+    scanf("%d",&n);\par
+    while(n!=0)\par
+    \{\par
+    r=n%10;\par
+    if(r%2==1)\par
+        sum=sum+r;\par
+    n=n/10;\par
+    \}\par
+    printf("%d ",sum);\par
+\}\par
+\b   #enter the no.12345\par
+9\par
+\par
+\fs32 Q. Sum of digits in the odd position of a no.\par
+Sol:\par
+\b0\fs28 #include <stdio.h>\par
+void main()\par
+\{\par
+    int n,r,sum=0,c=0;\par
+    printf("enter the no.");\par
+    scanf("%d",&n);\par
+    while(n!=0)\par
+    \{\par
+    c++;\par
+    r=n%10;\par
+    if(c%2==1)\par
+    sum=sum+r;\par
+    n=n/10;\par
+    \}\par
+    printf("%d ",sum);\par
+\}\par
+\b # enter the no.12346\par
+10\par
+------> for sum of even position no.s.... c%2==0\par
+\par
+\fs32 Q. How many digits in a no.\par
+Sol:\par
+\b0\fs28 #include <stdio.h>\par
+void main()\par
+\{\par
+    int n,c=0;\par
+    printf("enter the no.");\par
+    scanf("%d",&n);\par
+    while(n!=0)\par
+    \{\par
+    c++;\par
+    n=n/10;\par
+    \}\par
+    printf("%d ",c);\par
+\}\par
+\b # enter the no.24578\par
+5\par
+\b0\par
+\pard\sa200\sl276\slmult1\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\fs22\par
+}
+ 
